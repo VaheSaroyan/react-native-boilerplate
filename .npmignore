@@ -1,0 +1,9 @@
+.DS_Store
+template/node_modules
+template/ios/Pods
+template/android/app/build
+template/android/.gradle
+template/android/.idea
+documentation
+.idea
+.github
