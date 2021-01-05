@@ -1,0 +1,26 @@
+{
+  "name": "@vahesaroyan/react-native-boilerplate",
+  "version": "2.2.1",
+  "description": "React Native Boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VaheSaroyan/react-native-boilerplate.git"
+  },
+  "author": "Vahe Saroyan <vahe.saroyan.web@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VaheSaroyan/react-native-boilerplate/issues"
+  },
+  "homepage": "https://github.com/VaheSaroyan/react-native-boilerplate#readme",
+  "main": "post-init.script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "boilerplate",
+    "react-native",
+    "starter-kit"
+  ]
+}
