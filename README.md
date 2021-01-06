@@ -59,8 +59,12 @@ Assuming you have all the requirements installed, you can setup and run the proj
 ## Deep linking
 ```
 npx uri-scheme open myapp://app/home/1 --ios
-
 ```
+
+## Digging Deeper 
+
+To learn more about this boilerplate, go to [full documentation](https://vahesaroyan.github.io/react-native-boilerplate)
+
 ## License
 
 This project is released under the [MIT License](LICENSE).
