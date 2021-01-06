@@ -56,7 +56,7 @@ Assuming you have all the requirements installed, you can setup and run the proj
 - `cd ..` to come back to the root folder
 - `yarn start` to start the metro bundler, in a dedicated terminal
 - `yarn ios` to run the iOS application (remember to start a simulator or connect an iPhone phone)
-## Dep linking
+## Deep linking
 ```
 npx uri-scheme open myapp://app/home/1 --ios
 
