@@ -14,7 +14,7 @@ module.exports = {
   baseUrl: '/react-native-boilerplate/',
   onBrokenLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'vs',
+  organizationName: 'VaheSaroyan',
   projectName: 'react-native-boilerplate',
   themeConfig: {
     algolia: {
