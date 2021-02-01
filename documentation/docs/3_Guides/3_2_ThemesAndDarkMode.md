@@ -68,12 +68,12 @@ export default {
 ``` 
 
 🚨 After adding a new override file, don't forget to export it into the root file of the `custom` directory with the following :
-```javascript title="src/Theme/themes/custom/index.js"
+```javascript title="src/Theme/themes/custom/api.js"
 export { default as Variables } from './Variables'
 ```
 
 🚨 Each time a new theme is create, import it into the root of themes directory with the name of the theme :
-```javascript title="src/Theme/themes/index.js"
+```javascript title="src/Theme/themes/api.js"
 import * as default_dark from './default_dark'
 import * as custom from './custom' // <-- add this line
 
@@ -85,12 +85,12 @@ export default {
 
 That's it ! now you can use the `ChangeTheme` action to set the theme in a container for example:
 
-```jsx title="src/Containers/Example/index.js"
+```jsx title="src/Containers/Example/api.js"
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { View, Button } from 'react-native'
-import { useTheme } from '@/Theme'
-import ChangeTheme from '@/Store/Theme/ChangeTheme'
+import { useTheme } from '@/theme'
+import ChangeTheme from '@/store/theme/ChangeTheme'
 
 const IndexExampleContainer = () => {
   const { Common, Fonts, Gutters, Layout } = useTheme()
@@ -135,7 +135,7 @@ const Colors = {
 }
 
 const NavigationColors = {
-  primary: 'red', // override the React Navigation primary color ✅
+  primary: 'red', // override the React navigation primary color ✅
 }
 
 export default {
@@ -161,13 +161,13 @@ export default function ({ Colors }) {
 ```
 
 🚨 After adding a new override file, don't forget to export it into the root file of the `custom_dark` directory with the following :
-```jsx title="src/Theme/themes/custom_dark/index.js"
+```jsx title="src/Theme/themes/custom_dark/api.js"
 export { default as Variables } from './Variables'
 export { default as Common } from './Common'
 ```
 
 🚨 Each time a new theme is create, import it into the root of themes directory with the name of the theme :
-```jsx title="src/Theme/themes/index.js"
+```jsx title="src/Theme/themes/api.js"
 import * as default_dark from './default_dark'
 import * as custom from './custom'
 import * as custom_dark from './custom_dark' // <- add this line
@@ -181,7 +181,7 @@ export default {
 
 You can add extra buttons to the `ExampleContainer` below to test it :
 
-```jsx title="src/Containers/Example/index.js"
+```jsx title="src/Containers/Example/api.js"
 ...
 const ExampleContainer = () => {
   ...

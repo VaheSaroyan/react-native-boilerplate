@@ -32,7 +32,7 @@ const persistConfig = {
 ## Slices
 
 A slice is a group of actions, states and reducers for a same domain. For example, in this boilerplate, there are tree slices : `Startup` `Theme` and `User`.  
-In each slice, an `index.js` file which combines each store's feature/module (`fetchOne.js` for the `User` slice example).   
+In each slice, an `api.js` file which combines each store's feature/module (`fetchOne.js` for the `User` slice example).   
 We've decided to separate each module in one file in order to avoid very large incomprehensible files.
 So each of them includes its scoped state, his only action and related reducers. 
 
@@ -47,7 +47,7 @@ export default {
 }
 ```
 
-In the `index.js` file, all modules are merged in a slice where states, actions, and reducers are merged and placed into it.
+In the `api.js` file, all modules are merged in a slice where states, actions, and reducers are merged and placed into it.
 
 ```javascript
 const sliceInitialState = {

@@ -94,8 +94,8 @@ In redux, triggering an action lead to an associated reducer and in most cases t
 All the logic can be found at `Stores/Startup/Init.js`. 
 
 ```javascript
-import { buildAction, buildReducers } from '@/Store/builder'
-import FetchOne from '@/Store/User/FetchOne'
+import { buildAction, buildReducers } from '@/store/builder'
+import FetchOne from '@/store/user/FetchOne'
 
 export default {
   initialState: { loading: false, error: null },
