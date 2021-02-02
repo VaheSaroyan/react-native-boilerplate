@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, Button } from 'react-native'
-import useTranslation from '@/Hooks/useTranslation.effect'
-import useMount from '@/Hooks/useMount.effect'
+import useTranslation from '@/hooks/useTranslation.effect'
+import useMount from '@/hooks/useMount.effect'
 
 const First = ({ navigation }) => {
   const { __ } = useTranslation()

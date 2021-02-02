@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import InitStartup from '@/Reducers/Startup/Init'
+import InitStartup from '@/reducers/Startup/Init'
 import LottieView from 'lottie-react-native'
 
 const IndexStartupContainer = () => {
