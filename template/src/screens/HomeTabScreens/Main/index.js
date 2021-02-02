@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import {connect, useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Button, Text, TextInput, View } from 'react-native'
-import { createStructuredSelector } from "reselect";
 import { Brand } from '@/components'
 import { useTheme } from '@/theme'
+import FetchOne from '@/reducers/user/FetchOne'
 import useTranslation from '@/hooks/useTranslation.effect'
 import useMount from '@/hooks/useMount.effect'
-import {selectFetchOneUserError, selectFetchOneUserLoading} from "@/store/reducers/user/selectors";
-import userApi from "@/store/reducers/user/api";
 
-const SignInScreen = ({ navigation, route,fetchOneUserLoading,fetchOneUserError }) => {
+const SignInScreen = ({ navigation, route }) => {
   const { Common, Fonts, Gutters, Layout } = useTheme()
   const { __ } = useTranslation()
   const dispatch = useDispatch()
@@ -18,13 +16,17 @@ const SignInScreen = ({ navigation, route,fetchOneUserLoading,fetchOneUserError 
     navigation.setOptions({ title: __('Home') })
   })
 
-  const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user.item)
+  const fetchOneUserLoading = useSelector(
+    (state) => state.user.fetchOne.loading,
+  )
+  const fetchOneUserError = useSelector((state) => state.user.fetchOne.error)
 
   const [userId, setUserId] = useState('1')
 
   const fetch = (id) => {
     setUserId(id)
-    dispatch(userApi.getUser(id))
+    dispatch(FetchOne.action(id))
   }
   React.useEffect(() => {
     if (route.params && route.params.id) {
@@ -92,9 +94,5 @@ const SignInScreen = ({ navigation, route,fetchOneUserLoading,fetchOneUserError 
     </View>
   )
 }
-const mapStateToProps = createStructuredSelector({
-    fetchOneUserLoading: selectFetchOneUserLoading,
-    fetchOneUserError: selectFetchOneUserError,
-});
 
-export default connect(mapStateToProps)(SignInScreen)
+export default SignInScreen

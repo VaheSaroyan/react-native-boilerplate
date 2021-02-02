@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import InitStartup from '@/reducers/startup/Init'
 import LottieView from 'lottie-react-native'
-import {appInit} from "@/store/reducers/startup/actions";
 
-const IndexStartupContainer = ({appInit}) => {
-
+const IndexStartupContainer = () => {
+  const dispatch = useDispatch()
 
   useEffect(() => {
-      appInit()
-  }, [])
+    dispatch(InitStartup.action())
+  }, [dispatch])
 
   return (
     <LottieView
@@ -19,9 +19,5 @@ const IndexStartupContainer = ({appInit}) => {
     />
   )
 }
-const mapDispatchToProps = {
-    appInit,
-};
 
-
-export default connect(null, mapDispatchToProps)(IndexStartupContainer);
+export default IndexStartupContainer

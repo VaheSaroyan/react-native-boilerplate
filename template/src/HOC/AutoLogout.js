@@ -3,9 +3,8 @@ import { Keyboard, PanResponder, View } from 'react-native'
 import { defaultTimeoutHandler, useTimeout } from 'usetimeout-react-hook'
 
 import { navigateAndSimpleReset } from '@/navigation/config/Root'
-
+import SignOut from '@/reducers/user/SignOut'
 import { useDispatch } from 'react-redux'
-import {signOut} from "@/store/reducers/user/actions";
 
 const defaultTimeForInactivity = 1000 * 60 * 10
 
@@ -21,7 +20,7 @@ export default function (
       if (!isActive) {
         if (typeof notActive === 'function') notActive()
         navigateAndSimpleReset('PrivateStackNavigator')
-        dispatch(signOut)
+        dispatch(SignOut.action())
       }
       setIsActive(isActive)
     }

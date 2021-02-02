@@ -1,33 +1,43 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-
-import { persistStore, persistReducer } from 'redux-persist'
+import {
+  persistReducer,
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
+import { configureStore } from '@reduxjs/toolkit'
 import AsyncStorage from '@react-native-community/async-storage'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk'
-
-import rootReducer from './rootReducer'
+import rootReducer from '@/reducers'
 
 const persistConfig = {
-    key: 'root',
-    storage: AsyncStorage,
-    whitelist: ['theme', 'user'],
-    blacklist: ['routes'],
+  key: 'root',
+  storage: AsyncStorage,
+  whitelist: ['theme', 'user'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const middlewares = [thunk]
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => {
+    const middlewares = getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
 
-let composeEnhancers = __DEV__ ? composeWithDevTools :compose
+    if (__DEV__ && !process.env.JEST_WORKER_ID) {
+      const createDebugger = require('redux-flipper').default
+      middlewares.push(createDebugger())
+    }
 
-// if (__DEV__) {
-//     composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-// }
+    return middlewares
+  },
+})
 
-export const store = createStore(
-    persistedReducer,
-    composeEnhancers(applyMiddleware(...middlewares)),
-)
+const persistor = persistStore(store)
 
-export const persistor = persistStore(store)
-// persistor.purge();
+export { store, persistor }
