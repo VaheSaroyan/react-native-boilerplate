@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
-fs.copyFile('src/config/index.example.js', 'src/config/index.js', (err) => {
+fs.copyFile('src/config/index.example.js', 'src/config/api.js', (err) => {
     if (err) throw err;
-    console.log('src/config/index.example.js was copied to src/config/index.js');
+    console.log('src/config/index.example.js was copied to src/config/api.js');
 });
 
 console.log("React-Native Boilerplate initialized with success !");

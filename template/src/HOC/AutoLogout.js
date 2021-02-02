@@ -3,7 +3,7 @@ import { Keyboard, PanResponder, View } from 'react-native'
 import { defaultTimeoutHandler, useTimeout } from 'usetimeout-react-hook'
 
 import { navigateAndSimpleReset } from '@/navigation/config/Root'
-import SignOut from '@/reducers/user/SignOut'
+import SignOut from '@/reducers/User/SignOut'
 import { useDispatch } from 'react-redux'
 
 const defaultTimeForInactivity = 1000 * 60 * 10

@@ -17,6 +17,7 @@
     "@react-navigation/native": "^5.8.9",
     "@react-navigation/stack": "^5.12.6",
     "@reduxjs/toolkit": "^1.4.0",
+    "@thecodingmachine/redux-toolkit-wrapper": "1.3.0",
     "axios": "^0.21.1",
     "lottie-ios": "3.1.8",
     "lottie-react-native": "^3.5.0",
@@ -32,11 +33,8 @@
     "react-native-vector-icons": "^7.1.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "redux-flipper": "^1.4.2",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0",
     "usetimeout-react-hook": "^0.1.2"
   },
   "devDependencies": {

@@ -95,7 +95,7 @@ All the logic can be found at `Stores/Startup/Init.js`.
 
 ```javascript
 import { buildAction, buildReducers } from '@/store/builder'
-import FetchOne from '@/store/user/FetchOne'
+import FetchOne from '@/store/User/FetchOne'
 
 export default {
   initialState: { loading: false, error: null },

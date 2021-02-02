@@ -4,7 +4,7 @@ import {
   buildAsyncReducers,
 } from '@thecodingmachine/redux-toolkit-wrapper'
 import { navigateAndSimpleReset } from '@/navigation/config/Root'
-import DefaultTheme from '@/reducers/theme/DefaultTheme'
+import DefaultTheme from '@/reducers/Theme/DefaultTheme'
 
 export default {
   initialState: buildAsyncState(),

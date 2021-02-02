@@ -4,7 +4,7 @@ import { Button, View } from 'react-native'
 import { Brand } from '@/components'
 import { useTheme } from '@/theme'
 import { navigateAndSimpleReset } from '@/navigation/config/Root'
-import SignIn from '@/reducers/user/SignIn'
+import SignIn from '@/reducers/User/SignIn'
 import useTranslation from '@/hooks/useTranslation.effect'
 import useMount from '@/hooks/useMount.effect'
 

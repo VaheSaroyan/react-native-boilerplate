@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button, Text, TextInput, View } from 'react-native'
 import { Brand } from '@/components'
 import { useTheme } from '@/theme'
-import FetchOne from '@/reducers/user/FetchOne'
+import FetchOne from '@/reducers/User/FetchOne'
 import useTranslation from '@/hooks/useTranslation.effect'
 import useMount from '@/hooks/useMount.effect'
 

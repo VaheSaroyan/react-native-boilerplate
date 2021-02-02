@@ -2,10 +2,10 @@ import React from 'react'
 import { Button, Text, View } from 'react-native'
 import { useTheme } from '@/theme'
 import useTranslation from '@/hooks/useTranslation.effect'
-import ChangeTheme from '@/reducers/theme/ChangeTheme'
+import ChangeTheme from '@/reducers/Theme/ChangeTheme'
 import { useDispatch } from 'react-redux'
 import { navigateAndSimpleReset } from '@/navigation/config/Root'
-import SignOut from '@/reducers/user/SignOut'
+import SignOut from '@/reducers/User/SignOut'
 import useMount from '@/hooks/useMount.effect'
 
 const Main = ({ navigation }) => {

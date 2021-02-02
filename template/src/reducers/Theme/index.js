@@ -1,6 +1,6 @@
 import { buildSlice } from '@thecodingmachine/redux-toolkit-wrapper'
 import DefaultTheme from './DefaultTheme'
-import ChangeTheme from '@/reducers/theme/ChangeTheme'
+import ChangeTheme from '@/reducers/Theme/ChangeTheme'
 
 export default buildSlice('theme', [DefaultTheme, ChangeTheme], {
   theme: null,
