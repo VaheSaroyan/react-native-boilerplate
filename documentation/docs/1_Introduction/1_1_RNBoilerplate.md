@@ -57,22 +57,15 @@ The boilerplate includes an example (displaying fake user data) from UI componen
 
 ## Directory layout
 
-- `src/Assets`: assets (image, audio files, ...) used by the application
-- `src/Components`: presentational components
-- `src/Config`: configuration of the application
-- `src/Constants`: configuration of the application
-- `src/Helpers`: helpers of the application
-
-- `src/HOC`: Higher-Order Components  
-- `src/Hooks`: custom hooks  
-- `src/Navigation`: app main navigation 
-- `src/Reducers`: app reducers 
-- `src/Routes`: app routes 
-- `src/Screens`: app screens 
-- `src/Services`: application services, e.g. API clients
-- `src/Store`: redux [stores](https://redux.js.org/basics)
-- `src/Translations`: application translate
-- `src/Theme`: base styles for the application
+- `src/assets`: assets (image, audio files, ...) used by the application
+- `src/config`: configuration of the application
+- `src/hooks`: custom hooks  
+- `src/navigation`: app main navigation
+- `src/services`: application services, e.g. API clients
+- `src/store`: redux [stores](https://redux.js.org/basics)
+- `src/translations`: application translations
+- `src/utils`: helper utilities
+- `src/views`: base views e.g. `components`,`screens` and `theme`
 
 ## Updates
 
