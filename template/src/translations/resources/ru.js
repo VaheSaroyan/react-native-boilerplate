@@ -21,7 +21,6 @@ export default {
   Home: 'Главная',
   first: 'Первый',
   second: 'Второй',
-  full_screen_modal: 'Открыть полноэкранное модальное окно',
   close: 'Закрыть',
   sign_out: 'Выход',
   sign_in: 'Войти в систему',

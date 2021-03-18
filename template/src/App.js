@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import { persistor, store } from '@/store'
 import ApplicationNavigator from '@/navigation'
-import { SplashScreen } from '@/screens'
+import { SplashScreen } from '@/views/screens'
 import Translations from '@/translations'
 
 const App = () => (

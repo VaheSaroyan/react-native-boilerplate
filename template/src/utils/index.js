@@ -1,58 +1,3 @@
-import * as screens from '@/Screens'
-
-console.log({ screens })
-/**
- * routes
- * @type {*[]}
- */
-export const LOG_ROUTES = []
-
-/**
- *  make route object
- * @param path
- * @param screen
- * @param params
- * @param childrenOf
- * @returns {{[p: string]: *|{}|null, route: *, params: {}, childrenOf: null}}
- */
-export const route = (path, screen, params = {}, childrenOf = null) => {
-    return {
-        route: path,
-        [typeof screen === 'function' ? 'component' : 'screen']:
-            typeof screen === 'object' || typeof screen === 'undefined'
-                ? path
-                : screen,
-        params,
-        childrenOf: typeof params === 'string' ? params : childrenOf,
-    }
-}
-
-/**
- * make routes array for router
- * @param routes
- * @param type
- * @returns {*}
- */
-
-export const withRouter = (routes, type = 'Stack') => {
-    return routes.map((item) => {
-        if (__DEV__) {
-            LOG_ROUTES.push({ ...item, type })
-        }
-
-        const params = item.params
-        delete item.params
-        return {
-            name: item.route,
-            key: ID(),
-            component: screens[item.screen],
-            type,
-            ...params,
-            ...item,
-        }
-    })
-}
-
 /**
  * make random id
  * @returns {string}
@@ -67,44 +12,8 @@ export const ID = () => '_' + Math.random().toString(36).substr(2, 36)
  * @returns {*}
  */
 export const groupBy = (xs, key) => {
-    return xs.reduce(function (rv, x) {
-        ;(rv[x[key]] = rv[x[key]] || []).push(x)
-        return rv
-    }, {})
-}
-
-/**
- * log all routes
- */
-export const logRoutes = () => {
-    console.table(LOG_ROUTES)
-}
-
-/**
- * crate navigator
- * @param routes
- * @param navigatorCreator
- * @returns {{}}
- */
-export const makeNavigation = (routes, navigatorCreator) => {
-    if (typeof navigatorCreator !== 'function') {
-        throw new Error('navigatorCreator must be a function')
-    }
-    if (!Array.isArray(routes)) {
-        throw new Error('routes must be a array only')
-    }
-    let stacks = {}
-
-    const groupedRoutes = groupBy(routes, 'childrenOf')
-
-    Object.keys(groupedRoutes).forEach((item) => {
-        const navigator = navigatorCreator(item)
-        stacks = { ...stacks, [item]: navigator(groupedRoutes[item]) }
-    })
-
-    return stacks
-}
-
-if (__DEV__) {
-    setTimeout(logRoutes)
+  return xs.reduce(function (rv, x) {
+    ;(rv[x[key]] = rv[x[key]] || []).push(x)
+    return rv
+  }, {})
 }

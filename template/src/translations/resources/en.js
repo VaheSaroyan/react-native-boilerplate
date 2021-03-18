@@ -21,7 +21,6 @@ export default {
   Home: 'Home',
   first: 'First',
   second: 'Second',
-  full_screen_modal: 'Open full screen modal',
   close: 'Close',
   sign_out: 'Sign out',
   sign_in: 'Sign in',

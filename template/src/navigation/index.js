@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { SplashScreen } from '@/screens'
+import { SplashScreen } from '@/views/screens'
 import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
-import { navigationRef } from './config/Root'
+import { isReadyRef, navigationRef } from './config/Root'
 import { SafeAreaView, StatusBar } from 'react-native'
-import { useTheme } from '@/theme'
+import { useTheme } from '@/views/theme'
 import { AppearanceProvider } from 'react-native-appearance'
-import AutoLogout from '@/HOC/AutoLogout'
-import config from '@/navigation/config/navigation.config'
-import { modalRoutes } from '@/routes/routes'
-import useMount from '@/hooks/useMount.effect'
+import { TabNavigator } from './Tab'
+import PrivateStackNavigator from './PrivateStackNavigator'
 
 const Stack = createStackNavigator()
 
-let AppMainNavigator
-let PrivateStackNavigator
-
-// @refresh reset
 const ApplicationNavigator = () => {
   const { Layout, darkMode, NavigationTheme } = useTheme()
 
@@ -27,13 +21,7 @@ const ApplicationNavigator = () => {
   const isAuthenticated = useSelector(({ user }) => user.isAuthenticated)
 
   useEffect(() => {
-    if (
-      AppMainNavigator == null &&
-      PrivateStackNavigator == null &&
-      !applicationIsLoading
-    ) {
-      AppMainNavigator = require('./AppMainNavigator').default
-      PrivateStackNavigator = require('./PrivateStackNavigator').default
+    if (!applicationIsLoading) {
       setIsApplicationLoaded(true)
     }
   }, [applicationIsLoading])
@@ -49,7 +37,9 @@ const ApplicationNavigator = () => {
         <NavigationContainer
           theme={NavigationTheme}
           ref={navigationRef}
-          linking={config.linking}
+          onReady={() => {
+            isReadyRef.current = true
+          }}
         >
           <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
           <Stack.Navigator headerMode={'none'} mode={'modal'}>
@@ -57,7 +47,7 @@ const ApplicationNavigator = () => {
             {isApplicationLoaded && isAuthenticated && (
               <Stack.Screen
                 name="AppMainNavigator"
-                component={AppMainNavigator}
+                component={TabNavigator}
                 options={{
                   animationEnabled: false,
                 }}
@@ -72,15 +62,6 @@ const ApplicationNavigator = () => {
                 }}
               />
             )}
-            {isApplicationLoaded &&
-              modalRoutes &&
-              modalRoutes.map((route) => (
-                <Stack.Screen
-                  {...route}
-                  cardOverlayEnabled={false}
-                  cardShadowEnabled={false}
-                />
-              ))}
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
@@ -88,4 +69,4 @@ const ApplicationNavigator = () => {
   )
 }
 
-export default AutoLogout(ApplicationNavigator)
+export default ApplicationNavigator

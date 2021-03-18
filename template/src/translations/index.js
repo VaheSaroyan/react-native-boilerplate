@@ -3,8 +3,8 @@ import Context from './context'
 import useMount from '@/hooks/useMount.effect'
 import AsyncStorage from '@react-native-community/async-storage'
 import getServerTranslations from './Service'
-import { setLanguage as setHeaderLanguage } from '@/utils/api'
-import { DEFAULT_LANGUAGE } from '@/constants'
+import { Api } from '@/services'
+import { DEFAULT_LANGUAGE } from '@/config'
 
 const Translation = ({ children }) => {
   const [translations, setTranslations] = React.useState({})
@@ -18,7 +18,7 @@ const Translation = ({ children }) => {
         translations: serverTranslations,
         language: localLang,
       }
-      setHeaderLanguage(localLang)
+      Api.setLanguage(localLang)
       await AsyncStorage.setItem('translations', JSON.stringify(trans))
       await getTranslations(serverTranslations)
     }
@@ -59,7 +59,7 @@ const Translation = ({ children }) => {
 
   useMount(() => {
     setStorageLanguage().then((lang) => {
-      setHeaderLanguage(lang)
+      Api.setLanguage(lang)
       getTranslations({}, true, lang).then(() => {
         // console.warn('Local translations is get')
       })

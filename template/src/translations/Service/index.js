@@ -1,5 +1,5 @@
 import { en, ru } from '@/translations/resources'
-import { DEFAULT_LANGUAGE } from '@/constants'
+import { DEFAULT_LANGUAGE } from '@/config'
 
 /**
  * server request example for get translations
