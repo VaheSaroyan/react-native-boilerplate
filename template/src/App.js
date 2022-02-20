@@ -1,27 +1,27 @@
-import 'react-native-gesture-handler'
-import React from 'react'
-import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/lib/integration/react'
-import { persistor, store } from '@/store'
-import ApplicationNavigator from '@/navigation'
-import { SplashScreen } from '@/views/screens'
-import Translations from '@/translations'
+import * as React from 'react';
 
-const App = () => (
-  <Translations>
+import RNBootSplash from 'react-native-bootsplash';
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
+import { persistor, store } from '~/store';
+import { useMount } from '~/view/hooks/useMount';
+import { AppNavigator } from '~/view/navigation/App';
+
+export const RootApp = () => {
+  useMount(() => {
+    setTimeout(() => {
+      RNBootSplash.hide({ fade: true }); // fade
+    });
+  });
+  return (
     <Provider store={store}>
-      {/**
-       * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
-       * and saved to redux.
-       * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
-       * for example `loading={<SplashScreen />}`.
-       * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
-       */}
-      <PersistGate loading={<SplashScreen />} persistor={persistor}>
-        <ApplicationNavigator />
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+          <AppNavigator />
+        </SafeAreaProvider>
       </PersistGate>
     </Provider>
-  </Translations>
-)
-
-export default App
+  );
+};
