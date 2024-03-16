@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/react-native-skia/react-native-skia-xcframeworks.sh
+${PODS_ROOT}/../../node_modules/@shopify/react-native-skia/libs/ios/libskia.xcframework
+${PODS_ROOT}/../../node_modules/@shopify/react-native-skia/libs/ios/libsvg.xcframework
+${PODS_ROOT}/../../node_modules/@shopify/react-native-skia/libs/ios/libskshaper.xcframework
+${PODS_ROOT}/../../node_modules/@shopify/react-native-skia/libs/ios/libskparagraph.xcframework
+${PODS_ROOT}/../../node_modules/@shopify/react-native-skia/libs/ios/libskunicode.xcframework

@@ -1,0 +1,6 @@
+module InputMask {
+  umbrella header "InputMask-umbrella.h"
+
+  export *
+  module * { export * }
+}

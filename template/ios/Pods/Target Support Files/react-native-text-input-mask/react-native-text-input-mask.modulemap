@@ -1,0 +1,6 @@
+module react_native_text_input_mask {
+  umbrella header "react-native-text-input-mask-umbrella.h"
+
+  export *
+  module * { export * }
+}

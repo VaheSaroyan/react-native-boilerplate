@@ -1,0 +1,6 @@
+module react_native_keyboard_controller {
+  umbrella header "react-native-keyboard-controller-umbrella.h"
+
+  export *
+  module * { export * }
+}

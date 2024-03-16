@@ -1,0 +1,359 @@
+<html>
+<head>
+  <title>SSL test</title>
+</head>
+<body>
+<p>
+  Verification succeeded?
+</p>
+</body>
+<script>
+  const masts = {
+    'H': 10,
+    'D': 20,
+    'C': 30,
+    'S': 40
+  };
+
+  const suits = {
+    'A': 1,
+    'K': 13,
+    'Q': 12,
+    'J': 11,
+    'T': 10,
+    '9': 9,
+    '8': 8,
+    '7': 7
+  };
+
+  const cards = Object.keys(masts).flatMap(mast => Object.keys(suits).map(suit => mast + suit));
+
+  function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] == value);
+  }
+
+
+  const sum = (mast, suit) => {
+    return {
+      value: suit.reduce((acc, curr) => acc + curr, mast),
+      cards: suit.map(suit => getKeyByValue(masts, mast) + getKeyByValue(suits, suit))
+    };
+  };
+
+  const sumFourOfAKind = (suit, mast) => {
+    return {
+      value: mast.reduce((acc, curr) => acc + curr, suit),
+      cards: mast.map(mast => getKeyByValue(masts, mast) + getKeyByValue(suits, suit))
+    };
+
+  };
+  const combinations = {
+    terz: [
+      sum(masts['H'], [suits['A'], suits['K'], suits['Q']]),
+      sum(masts['H'], [suits['K'], suits['Q'], suits['J']]),
+      sum(masts['H'], [suits['Q'], suits['J'], suits['T']]),
+      sum(masts['H'], [suits['J'], suits['T'], suits['9']]),
+      sum(masts['H'], [suits['T'], suits['9'], suits['8']]),
+      sum(masts['H'], [suits['9'], suits['8'], suits['7']]),
+      sum(masts['D'], [suits['A'], suits['K'], suits['Q']]),
+      sum(masts['D'], [suits['K'], suits['Q'], suits['J']]),
+      sum(masts['D'], [suits['Q'], suits['J'], suits['T']]),
+      sum(masts['D'], [suits['J'], suits['T'], suits['9']]),
+      sum(masts['D'], [suits['T'], suits['9'], suits['8']]),
+      sum(masts['D'], [suits['9'], suits['8'], suits['7']]),
+      sum(masts['C'], [suits['A'], suits['K'], suits['Q']]),
+      sum(masts['C'], [suits['K'], suits['Q'], suits['J']]),
+      sum(masts['C'], [suits['Q'], suits['J'], suits['T']]),
+      sum(masts['C'], [suits['J'], suits['T'], suits['9']]),
+      sum(masts['C'], [suits['T'], suits['9'], suits['8']]),
+      sum(masts['C'], [suits['9'], suits['8'], suits['7']]),
+      sum(masts['S'], [suits['A'], suits['K'], suits['Q']]),
+      sum(masts['S'], [suits['K'], suits['Q'], suits['J']]),
+      sum(masts['S'], [suits['Q'], suits['J'], suits['T']]),
+      sum(masts['S'], [suits['J'], suits['T'], suits['9']]),
+      sum(masts['S'], [suits['T'], suits['9'], suits['8']]),
+      sum(masts['S'], [suits['9'], suits['8'], suits['7']])
+    ],
+    fifty: [
+      sum(masts['H'], [suits['A'], suits['K'], suits['Q'], suits['J']]),
+      sum(masts['H'], [suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['H'], [suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['H'], [suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['H'], [suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['D'], [suits['A'], suits['K'], suits['Q'], suits['J']]),
+      sum(masts['D'], [suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['D'], [suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['D'], [suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['D'], [suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['C'], [suits['A'], suits['K'], suits['Q'], suits['J']]),
+      sum(masts['C'], [suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['C'], [suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['C'], [suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['C'], [suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['S'], [suits['A'], suits['K'], suits['Q'], suits['J']]),
+      sum(masts['S'], [suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['S'], [suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['S'], [suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['S'], [suits['T'], suits['9'], suits['8'], suits['7']])
+    ],
+    hundred: [
+      sum(masts['H'], [suits['A'], suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['H'], [suits['K'], suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['H'], [suits['Q'], suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['H'], [suits['J'], suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['D'], [suits['A'], suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['D'], [suits['K'], suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['D'], [suits['Q'], suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['D'], [suits['J'], suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['C'], [suits['A'], suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['C'], [suits['K'], suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['C'], [suits['Q'], suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['C'], [suits['J'], suits['T'], suits['9'], suits['8'], suits['7']]),
+      sum(masts['S'], [suits['A'], suits['K'], suits['Q'], suits['J'], suits['T']]),
+      sum(masts['S'], [suits['K'], suits['Q'], suits['J'], suits['T'], suits['9']]),
+      sum(masts['S'], [suits['Q'], suits['J'], suits['T'], suits['9'], suits['8']]),
+      sum(masts['S'], [suits['J'], suits['T'], suits['9'], suits['8'], suits['7']])
+    ],
+    fourOfAKind: [
+      sumFourOfAKind(suits['A'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['K'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['Q'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['J'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['T'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['9'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['8'], [masts['H'], masts['D'], masts['C'], masts['S']]),
+      sumFourOfAKind(suits['7'], [masts['H'], masts['D'], masts['C'], masts['S']])
+
+    ]
+  };
+
+
+  /**need to check if the cards are in the same mast
+   need to check if the cards are in the same suit
+   need to return the combination of the cards    **/
+  const isTerz = (hand) => {
+    let combination = [];
+    const terzValues = combinations.terz.map(terz => terz.cards);
+    const isTerz = terzValues.some(terz => terz.every(card => hand.includes(card)));
+
+    if (isTerz) {
+      combination = combinations.terz.find(terz => terz.cards.every(card => hand.includes(card)));
+    }
+
+    return { condition: isTerz, combination };
+  };
+
+  const isFifty = (hand) => {
+    let combination = [];
+    const fiftyValues = combinations.fifty.map(fifty => fifty.cards);
+    const isFifty = fiftyValues.some(fifty => fifty.every(card => hand.includes(card)));
+
+    if (isFifty) {
+      combination = combinations.fifty.find(fifty => fifty.cards.every(card => hand.includes(card)));
+    }
+
+    return { condition: isFifty, combination };
+  };
+
+  const isHundred = (hand) => {
+    let combination = [];
+    const hundredValues = combinations.hundred.map(hundred => hundred.cards);
+    const isHundred = hundredValues.some(hundred => hundred.every(card => hand.includes(card)));
+
+    if (isHundred) {
+      combination = combinations.hundred.find(hundred => hundred.cards.every(card => hand.includes(card)));
+    }
+
+    return { condition: isHundred, combination };
+
+  };
+  const isFourOfAKind = (hand) => {
+    let combination = [];
+    const fourOfAKindValues = combinations.fourOfAKind.map(fourOfAKind => fourOfAKind.cards);
+    const isFourOfAKind = fourOfAKindValues.some(fourOfAKind => fourOfAKind.every(card => hand.includes(card)));
+
+    if (isFourOfAKind) {
+      combination = combinations.fourOfAKind.find(fourOfAKind => fourOfAKind.cards.every(card => hand.includes(card)));
+    }
+
+    return { condition: isFourOfAKind, combination };
+
+  };
+
+  const isDoubleFifty = (hand) => {
+    let combination = {};
+    const _isFifty = isFifty(hand);
+    if (_isFifty.condition) {
+      combination = _isFifty.combination;
+    }
+    if (Object.keys(combination).length > 0) {
+      const newHand = hand.filter(card => !combination.cards.includes(card));
+      const secondFifty = isFifty(newHand);
+      if (secondFifty.condition) {
+        return { condition: true, combination: [combination, secondFifty.combination] };
+      }
+    }
+
+    return { condition: _isFifty.condition, combination: [combination] };
+
+  };
+
+  const isDoubleTerz = (hand) => {
+    let combination = {};
+    const _isTerz = isTerz(hand);
+    if (_isTerz.condition) {
+      combination = _isTerz.combination;
+    }
+    if (Object.keys(combination).length > 0) {
+      const newHand = hand.filter(card => !combination.cards.includes(card));
+      const secondTerz = isTerz(newHand);
+      if (secondTerz.condition) {
+        return { condition: true, combination: [combination, secondTerz.combination] };
+      }
+    }
+
+    return { condition: _isTerz.condition, combination: [combination] };
+
+  };
+  const isDoubleFourOfAKind = (hand) => {
+    let combination = {};
+    const _isFourOfAKind = isFourOfAKind(hand);
+    if (_isFourOfAKind.condition) {
+      combination = _isFourOfAKind.combination;
+    }
+    if (Object.keys(combination).length > 0) {
+      const newHand = hand.filter(card => !combination.cards.includes(card));
+      const secondFourOfAKind = isFourOfAKind(newHand);
+      if (secondFourOfAKind.condition) {
+        return { condition: true, combination: [combination, secondFourOfAKind.combination] };
+      }
+    }
+
+    return { condition: _isFourOfAKind.condition, combination: [combination] };
+
+  };
+
+  const checkHand = (hand) => {
+
+    const hundred = isHundred(hand);
+
+    if (hundred.condition) {
+      const filteredHandHundred = hand.filter(card => !hundred.combination.cards?.includes(card));
+      const terz = isTerz(filteredHandHundred);
+      if (terz.condition) {
+        return `hundredTerz ${hundred.combination.cards} ${terz.combination}`;
+      }
+      return `hundred ${hundred.combination.cards}`;
+    } else {
+      const fourOfAKind = isDoubleFourOfAKind(hand);
+      const filteredHandFourOfAKind = hand.filter(card => !fourOfAKind.combination.some(comb => comb.cards?.includes(card)));
+      const fifty = isDoubleFifty(filteredHandFourOfAKind);
+      const filteredHandFifty = hand.filter(card => !fifty.combination.some(comb => comb.cards?.includes(card)));
+      const terz = isDoubleTerz(filteredHandFifty);
+
+      if (fifty.condition && fifty.combination.length > 1) {
+        return `doubleFifty [${fifty.combination[0].cards}][${fifty.combination[1].cards}]`;
+      } else if (fifty.condition && terz.combination.length > 0 && Object.keys(terz.combination[0]).length > 0) {
+        return `fiftyTerz [${fifty.combination[0].cards}] [${terz.combination[0].cards}]`;
+      } else if (fifty.condition) {
+        return `fifty ${fifty.combination[0].cards}`;
+      } else if (terz.condition && terz.combination.length > 1) {
+        return `doubleTerz [${terz.combination[0].cards}] [${terz.combination[1].cards}]`;
+      } else if (terz.condition) {
+        return `terz ${terz.combination[0].cards}`;
+      } else if (fourOfAKind.condition && fourOfAKind.combination.length > 1) {
+        return `doubleFourOfAKind [${fourOfAKind.combination[0].cards}] [${fourOfAKind.combination[1].cards}]`;
+      } else if (fourOfAKind.condition) {
+        return `fourOfAKind ${fourOfAKind.combination[0].cards}`;
+      } else {
+        return 'nothing';
+      }
+
+    }
+
+  };
+
+  const getHand = () => {
+    const hand = [];
+    while (hand.length < 8) {
+      const card = cards[Math.floor(Math.random() * cards.length)];
+      if (!hand.includes(card)) {
+        hand.push(card);
+      }
+    }
+    return hand;
+  };
+
+  const terz = ['H9', 'H7', 'S7', 'C7', 'DJ', 'H8', 'S8', 'C8'];
+  const terz2 = ['C9', 'H7', 'S7', 'C7', 'CT', 'H8', 'S8', 'C8'];
+  const fifty = ['CK', 'ST', 'HQ', 'CJ', 'DQ', 'H8', 'S8', 'SQ'];
+  const doubleFifty = ['CK', 'CA', 'CJ', 'CQ', 'SK', 'SA', 'SJ', 'SQ'];
+  const hundred = ['H9', 'H7', 'H8', 'HT', 'HJ', 'S8', 'C8', 'HQ'];
+  const hundredT = ['C7', 'CK', 'DQ', 'D7', 'C8', 'CT', 'C9', 'D9'];
+
+  // console.log(checkHand(doubleFifty));
+  // console.log(checkHand(terz2));
+  // checkHand(doubleFifty)
+  // console.log(checkHand(hundred));
+  const winningHands = [];
+  const round = 100000;
+  for (let i = 0; i < round; i++) {
+    const hand = getHand();
+    winningHands.push(`[${checkHand(hand)}],---- ${hand}`);
+  }
+
+  const bank = 1000000;
+  const bet = 1000;
+
+  const winCalculation = {
+    doubleFifty: {
+      winCount: winningHands.filter(hand => hand.includes('doubleFifty')).length,
+      multiplayer: 1000
+    },
+    doubleTerz: {
+      winCount: winningHands.filter(hand => hand.includes('doubleTerz')).length,
+      multiplayer: 6
+    },
+    doubleFourOfAKind: {
+      winCount: winningHands.filter(hand => hand.includes('doubleFourOfAKind')).length,
+      multiplayer: 2000
+    },
+    fifty: {
+      winCount: winningHands.filter(hand => hand.includes('fifty') && !hand.includes('fiftyTerz')).length,
+      multiplayer: 7
+    },
+    fiftyTerz: {
+      winCount: winningHands.filter(hand => hand.includes('fiftyTerz')).length,
+      multiplayer: 12
+    },
+    fourOfAKind: {
+      winCount: winningHands.filter(hand => hand.includes('fourOfAKind')).length,
+      multiplayer: 10
+    },
+    hundred: {
+      winCount: winningHands.filter(hand => hand.includes('hundred') && !hand.includes('hundredTerz')).length,
+      multiplayer: 25
+    },
+    hundredTerz: {
+      winCount: winningHands.filter(hand => hand.includes('hundredTerz')).length,
+      multiplayer: 1020
+    },
+    terz: {
+      winCount: winningHands.filter(hand => hand.includes('terz')).length,
+      multiplayer: 2
+    },
+    nothing: {
+      winCount: winningHands.filter(hand => hand.includes('nothing')).length,
+      multiplayer: 0
+    }
+  };
+  const bankStatus = Object.keys(winCalculation).reduce((acc, curr) => {
+    if (curr !== 'nothing') {
+      return acc + (winCalculation[curr].winCount * winCalculation[curr].multiplayer * bet);
+    }
+    return acc;
+  }, 0);
+  console.table(winCalculation);
+  console.log(round * bet - bankStatus,bankStatus);
+</script>
+</html>
