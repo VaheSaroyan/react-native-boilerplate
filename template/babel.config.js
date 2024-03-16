@@ -1,18 +1,22 @@
-const presets = ['module:metro-react-native-babel-preset'];
-const plugins = [];
-
-plugins.push([
-  'module-resolver',
-  {
-    root: ['./src'],
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      '~': './src',
-    },
-  },
-]);
-
 module.exports = {
-  presets,
-  plugins,
+  presets: ['module:@react-native/babel-preset'],
+  plugins: [
+    'transform-inline-environment-variables',
+    [
+      'module-resolver',
+      {
+        root: ['./'],
+        alias: {
+          '~': './src'
+        }
+      }
+    ],
+    [
+      '@babel/plugin-transform-react-jsx',
+      {
+        runtime: 'automatic'
+      }
+    ],
+    'react-native-reanimated/plugin'
+  ]
 };
