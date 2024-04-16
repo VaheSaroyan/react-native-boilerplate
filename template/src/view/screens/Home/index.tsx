@@ -31,6 +31,7 @@ import { AppBottomSheetInput, AppInput, AppSearchInput } from '~/view/components
 
 export const HomeScreen = () => {
   const confirmPasswordSheetRef = useRef<AppBottomSheetRefHanldes>(null);
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <AppScreen scrollable rowGap="s" withBottom={false}>

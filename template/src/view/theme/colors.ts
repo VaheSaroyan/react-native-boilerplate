@@ -99,18 +99,6 @@ export const DARK_COLOR_PALETTE = {
   success: {
     40: '#19E46B',
     100: '#FFFFFF'
-  },
-  gradient: {
-    pink: '#F93DF9',
-    crimson: '#FC2590',
-    red: '#FF0D29',
-    yellow: '#FFDB33',
-    orange: '#FF742E'
-  },
-  organizations: {
-    limelight: '#FF5555',
-    scm: '#B82D18',
-    cyclist: '#f19001'
   }
 };
 
@@ -212,17 +200,5 @@ export const LIGHT_COLOR_PALETTE: typeof DARK_COLOR_PALETTE = {
   success: {
     40: '#19E46B',
     100: '#FFFFFF'
-  },
-  gradient: {
-    pink: '#F93DF9',
-    crimson: '#FC2590',
-    red: '#FF0D29',
-    yellow: '#FFDB33',
-    orange: '#FF742E'
-  },
-  organizations: {
-    limelight: '#FF5555',
-    scm: '#B82D18',
-    cyclist: '#f19001'
   }
 };

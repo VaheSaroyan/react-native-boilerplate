@@ -14,7 +14,6 @@ const darkTheme = createTheme({
     primaryDark: DARK_COLOR_PALETTE.primary[30],
     onPrimary: DARK_COLOR_PALETTE.primary[100],
     secondary: DARK_COLOR_PALETTE.secondary[50],
-    secondaryOrange: DARK_COLOR_PALETTE.gradient.orange,
     onSecondary: DARK_COLOR_PALETTE.secondary[0],
     tertiary: DARK_COLOR_PALETTE.tertiary[50],
     onTertiary: DARK_COLOR_PALETTE.tertiary[100],
@@ -41,14 +40,7 @@ const darkTheme = createTheme({
     surfaceContainerHighest: DARK_COLOR_PALETTE.neutral[20],
 
     outline: DARK_COLOR_PALETTE.neutral[60],
-    outlineVariant: DARK_COLOR_PALETTE.neutral[30],
-
-    orgLimelight: DARK_COLOR_PALETTE.organizations.limelight,
-    onOrgLimelight: DARK_COLOR_PALETTE.neutral[100],
-    scm: DARK_COLOR_PALETTE.organizations.scm,
-    onScm: DARK_COLOR_PALETTE.neutral[100],
-    cyclist: DARK_COLOR_PALETTE.organizations.cyclist,
-    onCyclist: DARK_COLOR_PALETTE.neutral[100]
+    outlineVariant: DARK_COLOR_PALETTE.neutral[30]
   },
   spacing: {
     zero: 0,
@@ -153,105 +145,6 @@ const darkTheme = createTheme({
       letterSpacing: 0.25
     }
   },
-  gradientVariants: {
-    pinkDiagonal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.pink,
-        DARK_COLOR_PALETTE.gradient.crimson,
-        DARK_COLOR_PALETTE.gradient.red
-      ],
-      useAngle: true,
-      angle: 15,
-      locations: [0, 0.4, 1]
-    },
-    pinkHorizontal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.pink,
-        DARK_COLOR_PALETTE.gradient.crimson,
-        DARK_COLOR_PALETTE.gradient.red
-      ],
-      useAngle: true,
-      angle: 90,
-      locations: [0.05, 0.41, 1]
-    },
-    redDiagonal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.red,
-        DARK_COLOR_PALETTE.gradient.orange,
-        DARK_COLOR_PALETTE.gradient.yellow
-      ],
-      useAngle: true,
-      angle: 45,
-      locations: [0, 0.4, 1]
-    },
-    redHorizontal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.red,
-        DARK_COLOR_PALETTE.gradient.orange,
-        DARK_COLOR_PALETTE.gradient.yellow
-      ],
-      useAngle: true,
-      angle: 90,
-      locations: [0.05, 0.41, 1]
-    },
-    fullDiagonal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.pink,
-        DARK_COLOR_PALETTE.gradient.red,
-        DARK_COLOR_PALETTE.gradient.yellow
-      ],
-      useAngle: true,
-      angle: 45,
-      locations: [0.1, 0.5, 0.9]
-    },
-    fullHorizontal: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.pink,
-        DARK_COLOR_PALETTE.gradient.red,
-        DARK_COLOR_PALETTE.gradient.yellow
-      ],
-      useAngle: true,
-      angle: 90,
-      locations: [0.1, 0.5, 0.9]
-    },
-    swooshActive: {
-      colors: [
-        DARK_COLOR_PALETTE.gradient.pink,
-        DARK_COLOR_PALETTE.gradient.red,
-        DARK_COLOR_PALETTE.gradient.orange
-      ],
-      useAngle: true,
-      angle: 90,
-      locations: [0.1, 0.5, 0.9]
-    },
-    swooshInactive: {
-      colors: [
-        DARK_COLOR_PALETTE.neutral[20],
-        DARK_COLOR_PALETTE.neutral[20],
-        DARK_COLOR_PALETTE.neutral[20]
-      ],
-      useAngle: true,
-      angle: 90,
-      locations: [0.1, 0.5, 0.9]
-    },
-    dark: {
-      colors: ['transparent', DARK_COLOR_PALETTE.neutral[0]],
-      useAngle: true,
-      angle: 180,
-      locations: [0.5, 1]
-    },
-    darkMedium: {
-      colors: ['transparent', `${DARK_COLOR_PALETTE.neutral[0]}99`],
-      useAngle: true,
-      angle: 180,
-      locations: [0.5, 1]
-    },
-    darkTonal: {
-      colors: [DARK_COLOR_PALETTE.neutral[0], `${DARK_COLOR_PALETTE.neutral[0]}60`],
-      start: { x: 0, y: 1 },
-      end: { x: 0, y: 0 }
-    }
-  },
   iconSizes: {
     xs: 12,
     s: 18,
@@ -276,23 +169,9 @@ const darkTheme = createTheme({
     s: 24, // checkbox
     m: 32, // label, switch
     l: 40,
-    switchWidth: 52,
-    boldBorder: 2,
     profileImage: 48,
-    profileImageLarge: 64,
-    logoImage: 96,
-    cardBanner: 120,
-    classUpdateCard: 400,
-    baseItem: 48,
     bottomTabBarHeight: 72,
-    settingMenuHeight: 72,
-    imageSquare: 80,
-    closeButton: 20,
-    activityIconContainer: 28,
-    achievementBlock: 72,
-    horizontalChartHeight: 32,
-    headerHeight: Platform.OS === 'ios' ? 44 : 56,
-    feedHubsRowHeight: 112
+    headerHeight: Platform.OS === 'ios' ? 44 : 56
   },
   opacity: {
     none: 1,
