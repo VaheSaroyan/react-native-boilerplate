@@ -2,7 +2,6 @@ import { Platform, StatusBar } from 'react-native';
 
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeProvider } from '@shopify/restyle';
-import Config from 'react-native-config';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { MD3DarkTheme, Provider as PaperProvider } from 'react-native-paper';
@@ -18,8 +17,6 @@ import { Splash } from '~/view/components/overlays';
 import { HomeScreen } from '~/view/screens/Home';
 
 import 'react-native-url-polyfill/auto';
-
-const { ENV, STORYBOOK_ENABLED } = Config;
 
 StatusBar.setBarStyle('light-content');
 if (Platform.OS === 'android') {

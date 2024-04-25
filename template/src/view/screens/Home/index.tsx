@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import Config from 'react-native-config';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
@@ -29,6 +30,8 @@ import { AppImage } from '~/view/components/images_and_icons/AppImage.tsx';
 import { AppProfileImage } from '~/view/components/images_and_icons/AppProfileImage.tsx';
 import { AppBottomSheetInput, AppInput, AppSearchInput } from '~/view/components/input';
 
+const { ENV } = Config;
+
 export const HomeScreen = () => {
   const confirmPasswordSheetRef = useRef<AppBottomSheetRefHanldes>(null);
 
@@ -36,7 +39,9 @@ export const HomeScreen = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <AppScreen scrollable rowGap="s" withBottom={false}>
         <AppDivider />
+        <AppText variant="bodySmall">ENV: {ENV}</AppText>
         <AppText variant="bodySmall">AnimatedNumber</AppText>
+        <AppDivider />
         <AppBox flexDirection="row">
           <AnimatedNumber number="912387129" />
         </AppBox>

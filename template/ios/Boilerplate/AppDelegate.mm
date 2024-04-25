@@ -16,10 +16,10 @@
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
-  return [self getBundleURL];
+  return [self bundleURL];
 }
 
-- (NSURL *)getBundleURL
+- (NSURL *)bundleURL
 {
 #if DEBUG
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index"];
@@ -34,11 +34,9 @@
   UIView *rootView = [super createRootViewWithBridge:bridge
                                           moduleName:moduleName
                                            initProps:initProps];
-
+  
   [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
-
+  
   return rootView;
 }
-
-
 @end

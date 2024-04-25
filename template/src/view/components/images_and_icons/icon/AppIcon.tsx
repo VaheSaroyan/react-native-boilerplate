@@ -47,6 +47,7 @@ import Heart from '~/assets/svg/ic-heart.svg';
 import Human from '~/assets/svg/ic-human.svg';
 import ImagePicker from '~/assets/svg/ic-image-picker.svg';
 import InfoFilled from '~/assets/svg/ic-info-filled.svg';
+import Info from '~/assets/svg/ic-info.svg';
 import InviteContacts from '~/assets/svg/ic-invite-contacts.svg';
 import LeadingStar from '~/assets/svg/ic-leading-star.svg';
 import Link from '~/assets/svg/ic-link.svg';
@@ -204,6 +205,7 @@ export type IconName =
   | 'telegram'
   | 'discord'
   | 'search'
+  | 'info'
   | 'circle-close';
 
 export type IconProps = ThemedProps & {
@@ -323,6 +325,8 @@ export const AppIcon = ({ name, color = 'onSurface', size = 'm' }: IconProps) =>
       return <SmileSad width={widthValue} height={widthValue} color={colorValue} />;
     case 'settings':
       return <Settings width={widthValue} height={widthValue} color={colorValue} />;
+    case 'info':
+      return <Info width={widthValue} height={widthValue} color={colorValue} />;
     case 'location-mark':
       return <LocationMarkIcon width={widthValue} height={widthValue} color={colorValue} />;
     case 'comment':

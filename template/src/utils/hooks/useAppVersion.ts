@@ -10,12 +10,10 @@ export const useAppVersion = () => {
     switch (ENV) {
       case 'PROD':
         return `Version - ${getVersion()} (${getBuildNumber()})`;
-
-      case 'PREPROD':
-        return `Beta - ${getVersion()} (${getBuildNumber()})`;
-
-      default:
+      case 'STAGE':
         return `Stage - ${getVersion()} (${getBuildNumber()})`;
+      default:
+        return `Dev - ${getVersion()} (${getBuildNumber()})`;
     }
   }, [ENV, getVersion, getBuildNumber]);
 

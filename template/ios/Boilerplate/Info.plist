@@ -32,10 +32,12 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
+	<key>UILaunchStoryboardName</key>
+	<string>BootSplash.storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>arm64</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -53,7 +55,5 @@
 		<string>PoppinsRegular.ttf</string>
 		<string>PoppinsSemiBold.ttf</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>BootSplash.storyboard</string>
 </dict>
 </plist>

@@ -7,7 +7,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/VaheSaroyan/react-native-boilerplate)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/VaheSaroyan/react-native-boilerplate/latest)
 ![GitHub top language](https://img.shields.io/github/languages/top/VaheSaroyan/react-native-boilerplate)
-
+![Github Downloads All Releases](https://img.shields.io/github/downloads/VaheSaroyan/react-native-boilerplate/total)
 # React Native boilerplate
 
 This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that can be used to kickstart a mobile application.
@@ -32,7 +32,7 @@ Follow instructions for your given `development OS` and `target OS`.
 To create a new project using the boilerplate simply run :
 
 ```
-npx react-native init MyApp --template @vahesaroyan/react-native-boilerplate
+npx react-native init MyApp --template @koriz/react-native-boilerplate
 ```
 
 Assuming you have all the requirements installed, you can setup and run the project by running:
@@ -63,7 +63,7 @@ npx uri-scheme open myapp://app/home/1 --ios
 
 ## Digging Deeper 
 
-To learn more about this boilerplate, go to [full documentation](https://vahesaroyan.github.io/react-native-boilerplate)
+To learn more about this boilerplate, go to [full documentation](https://koreiz.github.io/react-native-boilerplate)
 
 ## License
 

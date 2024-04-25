@@ -99,6 +99,13 @@ export const DARK_COLOR_PALETTE = {
   success: {
     40: '#19E46B',
     100: '#FFFFFF'
+  },
+  gradient: {
+    pink: '#F93DF9',
+    crimson: '#FC2590',
+    red: '#FF0D29',
+    yellow: '#FFDB33',
+    orange: '#FF742E'
   }
 };
 
@@ -200,5 +207,12 @@ export const LIGHT_COLOR_PALETTE: typeof DARK_COLOR_PALETTE = {
   success: {
     40: '#19E46B',
     100: '#FFFFFF'
+  },
+  gradient: {
+    pink: '#F93DF9',
+    crimson: '#FC2590',
+    red: '#FF0D29',
+    yellow: '#FFDB33',
+    orange: '#FF742E'
   }
 };

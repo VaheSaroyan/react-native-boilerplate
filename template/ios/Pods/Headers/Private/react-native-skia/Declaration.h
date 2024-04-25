@@ -1,1 +1,0 @@
-../../../../../node_modules/@shopify/react-native-skia/cpp/rnskia/dom/base/Declaration.h

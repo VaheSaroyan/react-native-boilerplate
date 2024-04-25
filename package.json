@@ -1,17 +1,17 @@
 {
   "name": "@vahesaroyan/react-native-boilerplate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "React Native Boilerplate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/VaheSaroyan/react-native-boilerplate.git"
+    "url": "https://github.com/Koreiz/react-native-boilerplate.git"
   },
   "author": "Vahe Saroyan <vahe.saroyan.web@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/VaheSaroyan/react-native-boilerplate/issues"
+    "url": "https://github.com/Koreiz/react-native-boilerplate/issues"
   },
-  "homepage": "https://github.com/VaheSaroyan/react-native-boilerplate#readme",
+  "homepage": "https://github.com/Koreiz/react-native-boilerplate#readme",
   "main": "post-init.script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

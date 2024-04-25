@@ -6,7 +6,6 @@ export * from './useMount';
 export * from './useNetwork';
 export * from './useKeyboard';
 export * from './useAppVersion';
-export * from './useEffectWithoutInit';
 export * from './useInput';
 export * from './useInputPerformant';
 export * from './useUnmount';

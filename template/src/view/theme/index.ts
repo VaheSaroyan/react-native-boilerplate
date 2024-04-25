@@ -188,7 +188,19 @@ const darkTheme = createTheme({
     24: '3D',
     12: '1F',
     0: '00'
-  }
+  },
+    gradientVariants: {
+        pinkDiagonal: {
+            colors: [
+                DARK_COLOR_PALETTE.gradient.pink,
+                DARK_COLOR_PALETTE.gradient.crimson,
+                DARK_COLOR_PALETTE.gradient.red
+            ],
+            useAngle: true,
+            angle: 15,
+            locations: [0, 0.4, 1]
+        },
+    },
 });
 
 export const useAppTheme = () => {
