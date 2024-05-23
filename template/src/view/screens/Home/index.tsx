@@ -154,31 +154,32 @@ export const HomeScreen = () => {
             confirmPasswordSheetRef.current?.show();
           }}
         />
-        <AppBaseBottomSheet
-          ref={confirmPasswordSheetRef}
-          title="Make a change?"
-          subTitle="We need to be sure this is you. Please enter your password first."
-          subContent={
-            <AppBox pb="s" pt="m">
-              <AppBottomSheetInput
-                onChangeText={console.log}
-                label="Password"
-                withSecureText
-                autoCorrect={false}
-                autoCapitalize="none"
-              />
-            </AppBox>
-          }
-          androidInputMode="adjustPan"
-          positiveButtonTitle="Save"
-          onPositivePress={console.log}
-          negativeButtonTitle={undefined}
-        />
+
         <AppText variant="bodySmall">AppInput</AppText>
         <AppInput label="Name" />
         <AppText variant="bodySmall">AppSearchInput</AppText>
         <AppSearchInput onTextChange={console.log} />
       </AppScreen>
+      <AppBaseBottomSheet
+        ref={confirmPasswordSheetRef}
+        title="Make a change?"
+        subTitle="We need to be sure this is you. Please enter your password first."
+        subContent={
+          <AppBox pb="s" pt="m">
+            <AppBottomSheetInput
+              onChangeText={console.log}
+              label="Password"
+              withSecureText
+              autoCorrect={false}
+              autoCapitalize="none"
+            />
+          </AppBox>
+        }
+        androidInputMode="adjustPan"
+        positiveButtonTitle="Save"
+        onPositivePress={console.log}
+        negativeButtonTitle={undefined}
+      />
     </SafeAreaView>
   );
 };

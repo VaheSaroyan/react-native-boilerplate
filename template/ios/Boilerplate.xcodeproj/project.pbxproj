@@ -84,9 +84,7 @@
 		C910CDB9D30C0C351ED070BA /* Pods-Boilerplate-BoilerplateDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boilerplate-BoilerplateDev.release.xcconfig"; path = "Target Support Files/Pods-Boilerplate-BoilerplateDev/Pods-Boilerplate-BoilerplateDev.release.xcconfig"; sourceTree = "<group>"; };
 		DF79E5AE2BDAB40000F0B10B /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BootSplash.storyboard; sourceTree = "<group>"; };
 		DF79E5C62BDABAE000F0B10B /* BoilerplateStage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerplateStage.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF79E5C72BDABAE200F0B10B /* Boilerplate copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Boilerplate copy-Info.plist"; path = "/Users/vsar/www/react-native-boilerplate/template/ios/Boilerplate copy-Info.plist"; sourceTree = "<absolute>"; };
 		DF79E5DE2BDABAF100F0B10B /* BoilerplateDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoilerplateDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF79E5DF2BDABAF200F0B10B /* BoilerplateStage copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BoilerplateStage copy-Info.plist"; path = "/Users/vsar/www/react-native-boilerplate/template/ios/BoilerplateStage copy-Info.plist"; sourceTree = "<absolute>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -186,8 +184,6 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				A6508348EF1143729FA8FDA5 /* Resources */,
-				DF79E5C72BDABAE200F0B10B /* Boilerplate copy-Info.plist */,
-				DF79E5DF2BDABAF200F0B10B /* BoilerplateStage copy-Info.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";

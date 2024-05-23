@@ -98,7 +98,6 @@ export const AppBottomSheet = forwardRef<AppBottomSheetRefHanldes, Props>(
         handleComponent={renderHandle}
         backdropComponent={renderBackDrop}
         android_keyboardInputMode={androidInputMode}
-        enableDynamicSizing
         onDismiss={onDismiss}
         topInset={topInset}
         backgroundStyle={{

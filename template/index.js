@@ -1,7 +1,7 @@
 /**
  * @format
  */
-
+import 'react-native-get-random-values';
 import { AppRegistry, LogBox } from 'react-native';
 
 import { name as appName } from './app.json';
