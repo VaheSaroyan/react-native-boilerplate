@@ -1,5 +1,6 @@
 import { AxiosError } from 'axios';
 import ExpiryMap from 'expiry-map';
+// @ts-ignore
 import pMemoize from 'p-memoize/dist/index';
 
 import { AuthStorage } from '../../local/domains/Auth';
@@ -84,10 +85,6 @@ export const handleError = (error: AxiosError): AppHttpError => {
       meta: 'unknown'
     };
   } else {
-    if (error?.toJSON) {
-      // Sentry.captureException(error.toJSON());
-    }
-
     return {
       code: -1,
       message: error.message,

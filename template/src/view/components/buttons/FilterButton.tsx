@@ -37,7 +37,7 @@ export const FilterButton = (props: FilterButtonProps) => {
         borderWidth={selected ? 0 : 1}>
         {leftIcon && (
           <AppIcon
-            name={selected ? 'check' : leftIcon}
+            name={selected ? 'check-circle' : leftIcon}
             size="s"
             color={selected ? 'onSecondaryContainer' : 'onSurfaceVariant'}
           />

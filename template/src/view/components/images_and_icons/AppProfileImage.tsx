@@ -60,8 +60,7 @@ export const AppProfileImage = ({ uri, placeholder, background, borderRadius, si
         borderRadius: borderRadiusValue ?? otherSizes.profileImage / 2,
         backgroundColor: colors.surfaceContainerHighest,
         overflow: 'hidden'
-      }}>
-      <AppSvgImage name="swoosh-avatar-placeholder" size={size ?? otherSizes.profileImage} />
-    </AppBox>
+      }}
+    />
   );
 };
